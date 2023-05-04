@@ -1,0 +1,60 @@
+@import './base.css';
+
+#home-page {
+  width: 100vh;
+  height: 100vh;
+}  
+
+#home-content {
+  bottom: 22cm;
+}
+
+#header{
+  margin-top: 2cm;
+  margin-left: 2cm;
+}
+
+#header2{
+  margin-left: 2cm;
+}
+
+#paragraph1{
+  margin-top: 10mm;
+  margin-left: 2cm;
+  max-width: 600px;
+}
+
+strong{
+  color: rgb(70, 140, 250);
+}
+
+#logo{
+  margin-left: 1cm;
+}
+
+
+#background-image{
+  margin-left: 12cm;
+  height: 100vh;
+  max-width: 140%;
+	clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+#home-button1{
+  margin-top: 1cm;
+  margin-left: 2.5cm;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(71, 140, 252);
+  color: white;
+}
+
+#home-button2{
+  margin-top: 1cm;
+  margin-left: 5mm;
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  color: rgb(71, 140, 252);
+  box-shadow: 0px 0px 3px gray;
+}
