@@ -11,7 +11,7 @@
                   upload medical documents in order for doctors to see. Additionally, MediMeet provides a survey for patients who are
                   not confident which doctor they should have an appointment with.</p>
             <div id="body1">
-                  <button id="home-button1" class="btn">Patient Login</button>
+                  <a href="#/patientlogin"><button id="home-button1" class="btn">Patient Login</button></a>
                   <button id="home-button2" class="btn">Doctor Login</button>
             </div>      
       </div>     
@@ -19,7 +19,7 @@
 
 </template>
 
-<script lang="ts">
+<script>
 export default{
       name: "Home",  
 }
