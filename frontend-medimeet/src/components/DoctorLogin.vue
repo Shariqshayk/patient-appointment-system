@@ -1,11 +1,11 @@
 <template>
     <div id="signin-page">
         <a href="/"><img id="logo-patientlogin" src="../images/medimeet.png" height="120"></a>
-        <h2>Sign in to your <strong>Patient</strong> account</h2>
-        <p>Did you want to sign in to a Doctor account? <a href="#/doctorlogin" id="link">Click here</a></p>
+        <h2>Sign in to your <strong>Doctor</strong> account</h2>
+        <p>Did you want to sign in to a Patient account? <a href="#/patientlogin" id="link">Click here</a></p>
         <div id="container">
             <div id="row">
-                <div id="col-lg-4 col-md-6 col-sm-8 mx-auto">
+                <div>
                     <div id="card signin" v-bind:class="{ error: emptyFields }">
                         <form id="form">
                             <p id="input-label1">Email address</p>
@@ -27,7 +27,7 @@
 
 <script>
     export default {
-        name: 'PatientSignin',
+        name: 'DoctorSignin',
         data() {
             return{
                 input: {

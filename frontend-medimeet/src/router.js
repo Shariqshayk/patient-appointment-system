@@ -1,6 +1,7 @@
 import Home from './components/Home.vue'
 import Register from './components/Register.vue'
 import PatientLogin from './components/PatientLogin.vue'
+import DoctorLogin from './components/DoctorLogin.vue'
 import {createRouter, createWebHashHistory} from "vue-router"
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
         name: "PatientLogin",
         component: PatientLogin,
         path: "/patientlogin"
+    },
+    {
+        name: "DoctorLogin",
+        component: DoctorLogin,
+        path: "/doctorlogin"
     }
 ];
 
