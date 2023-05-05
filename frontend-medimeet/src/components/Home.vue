@@ -12,7 +12,7 @@
                   not confident which doctor they should have an appointment with.</p>
             <div id="body1">
                   <a href="#/patientlogin"><button id="home-button1" class="btn">Patient Login</button></a>
-                  <button id="home-button2" class="btn">Doctor Login</button>
+                  <a href="#/doctorlogin"><button id="home-button2" class="btn">Doctor Login</button></a>
             </div>      
       </div>     
 </header>
