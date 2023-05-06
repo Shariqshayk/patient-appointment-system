@@ -1,8 +1,8 @@
 <template>
     <div id="signin-page">
-        <a href="/"><img id="logo-patientlogin" src="../images/medimeet.png" height="120"></a>
+        <a href="/"><img src="../images/medimeet.png" height="120"></a>
         <h2>Sign in to your <strong>Doctor</strong> account</h2>
-        <p>Did you want to sign in to a Patient account? <a href="#/patientlogin" id="link">Click here</a></p>
+        <p>Did you want to sign in to a Patient account? <a href="#/patientlogin" id="link">Click here!</a></p>
         <div id="container">
             <div id="row">
                 <div>
