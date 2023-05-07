@@ -1,7 +1,8 @@
 <template >
-    <div id="regiser">
+    <div id="register">
         <a href="/"><img src="../images/medimeet.png" height="120" id="image"></a>
-
+        <h4>Create your <strong>MediMeet</strong> Account!</h4>
+        <p>Already have an account? Login as <a href="#/patientlogin" id="link">Patient</a> or <a href="#/doctorlogin" id="link">Doctor</a>.</p>
         <div id="container">
             <form v-bind:class="{ error: emptyFields}" id="form">
                 <p id="input-label1">Email address</p>
@@ -17,7 +18,7 @@
                 <p id="input-label6">Phone number</p>
                 <input v-model="phoneNumber" type="phoneNumber" class="form-control" id="form-inputs" required>
                 <p id="input-label7">Role</p>
-                <select v-model="role" type="role">
+                <select v-model="role" type="role" id="dropdown">
                     <option disabled value="">Please select one</option>
                     <option>Patient</option>
                     <option>Doctor</option>
@@ -69,10 +70,6 @@ export default{
     margin: 0 auto;
     }
 
-    #form{
-        padding-top: 0.5cm;
-    }
-
     #input-label1{
         top: 10px;
         right: 3.7cm;
@@ -85,31 +82,36 @@ export default{
 
     #input-label3{
         top: 10px;
-        right: 3.7cm;
+        right: 4cm;
     }
 
     #input-label4{
         top: 10px;
-        right: 3.7cm;
+        right: 4cm;
     }
 
     #input-label5{
         top: 10px;
-        right: 3.7cm;
+        right: 4.6cm;
     }
 
     #input-label6{
         top: 10px;
-        right: 3.7cm;
+        right: 3.6cm;
     }
 
     #input-label7{
-        top: 10px;
-        right: 3.7cm;
+        top: 15px;
+        right: 4.6cm;
+    }
+
+    #dropdown{
+        bottom: 0.65cm;
+        right: 1.8cm;
     }
 
     #button-register{
-    margin-top: 1cm;
+    margin-bottom: 1cm;
     background-color: rgb(70, 140, 250);
     color: white;
     box-shadow: 0px 0px 3px gray;
