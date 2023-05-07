@@ -13,6 +13,7 @@
             <div id="body1">
                   <a href="#/patientlogin"><button id="home-button1" class="btn">Patient Login</button></a>
                   <a href="#/doctorlogin"><button id="home-button2" class="btn">Doctor Login</button></a>
+                  <a href="#/register"><button id="home-button3" class="btn">Register Here</button></a>
             </div>      
       </div>     
 </header>
@@ -72,6 +73,15 @@
   background-color: white;
   color: rgb(71, 140, 252);
   box-shadow: 0px 0px 3px gray;
+}
+
+#home-button3{
+  margin-top: 1cm;
+  margin-left: 5mm;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(71, 140, 252);
+  color: white;
 }
 </style>
 
