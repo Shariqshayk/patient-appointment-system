@@ -4,6 +4,7 @@ import PatientLogin from './components/PatientLogin.vue'
 import DoctorLogin from './components/DoctorLogin.vue'
 import PatientDashboard from './components/PatientDashboard.vue'
 import DoctorDashboard from './components/DoctorDashboard.vue'
+import AppointmentBooking from './components/AppointmentBooking.vue'
 import {createRouter, createWebHashHistory} from "vue-router"
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
         name: "DoctorDashboard",
         component:DoctorDashboard,
         path: "/doctordashboard"
+    },
+    {
+        name: "AppointmentBooking",
+        component: AppointmentBooking,
+        path: "/appointmentbooking"
     }
 ];
 
