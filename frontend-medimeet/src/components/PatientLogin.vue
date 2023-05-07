@@ -17,6 +17,7 @@
                             <p id="forgot">Forgot your password</p>
                             <input type="submit" id="button-patient" class="btn" @click="doLogin" value="Sign in">
                             <p id="centered">Or continue with</p>
+                            <p>Don't have an account? <a href="#/register" id="link">Click here to register!</a></p>
                         </form>
                     </div>
                 </div>

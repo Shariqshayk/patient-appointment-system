@@ -10,11 +10,9 @@
                   the middleman of the GP for their bigger concerns. With MediMeet patients can book  appointments with specialists,
                   upload medical documents in order for doctors to see. Additionally, MediMeet provides a survey for patients who are
                   not confident which doctor they should have an appointment with.</p>
-            <div id="body1">
                   <a href="#/patientlogin"><button id="home-button1" class="btn">Patient Login</button></a>
                   <a href="#/doctorlogin"><button id="home-button2" class="btn">Doctor Login</button></a>
-                  <a href="#/register"><button id="home-button3" class="btn">Register Here</button></a>
-            </div>      
+                  <a href="#/register"><button id="home-button3" class="btn">Register Here</button></a> 
       </div>     
 </header>
 
@@ -58,7 +56,7 @@
 
 #home-button1{
   margin-top: 1cm;
-  margin-left: 2.5cm;
+  margin-left: 2cm;
   width: 150px;
   height: 50px;
   background-color: rgb(71, 140, 252);
