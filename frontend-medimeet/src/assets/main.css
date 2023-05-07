@@ -40,9 +40,7 @@ strong{
   width: 20%;
 }
 
-#dashboard{  
-  margin-left:auto;
-  margin-right:auto;
+#dashboard{
   border-radius: 6px;
   bottom: 2cm ;
   left: 0.5cm;
@@ -52,7 +50,7 @@ strong{
   padding-top: 0;
   margin: 0 auto;
   background-color: white;
-  box-shadow: rgba(99, 99, 99, 0.44) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.44) 0 2px 8px 0;
 }
 
 #dashed-border{
@@ -65,9 +63,15 @@ strong{
   min-width: 1100px;
   padding-top: 0;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-#header-dash{
+.header-dash{
   padding-top: 0.7cm;
   padding-left: 1cm;
+  padding-bottom: 20px;
+  margin: 0 25px;
+  border-bottom: 1px solid #D1D5DB;
 }

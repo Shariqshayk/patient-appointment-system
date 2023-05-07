@@ -7,10 +7,10 @@
         </header>
         <div>
         </div>
-    </div>   
+    </div>
     <div id="dashboard">
     <div id="dashed-border">
-        <h5 id="header-dash">Upcoming Appointments</h5>
+        <h5 class="header-dash">Upcoming Appointments</h5>
     </div>
     </div>
 </template>
