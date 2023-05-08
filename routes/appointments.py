@@ -9,7 +9,9 @@ appointments_bp = Blueprint('appointments', __name__)
 def get_all_doctors():
     try:      
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("Select * from doctors")
         rows = cur.fetchall()
         data_dict = {}
@@ -29,7 +31,9 @@ def get_doctor_by_speciality():
     try:
         speciality = request.args.get('speciality')
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("Select * from doctors where speciality = %s",(speciality,))
         rows = cur.fetchall()
         print(rows)
@@ -51,7 +55,9 @@ def get_doctor_by_id(doctor_id):
         #doctor_id = request.args.get('doctor_id')
         print("-->",doctor_id)
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("Select * from doctors where doctor_id = %s",(doctor_id,))
         rows = cur.fetchall()
         print(rows)
@@ -76,7 +82,9 @@ def get_doctor_by_availability(doctor_id):
         #doctor_id = request.args.get('doctor_id')
         print("-->",doctor_id)
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("Select * from doctor_availability where doctor_id = %s and status = 'Available'",(doctor_id,))
         rows = cur.fetchall()
         data_dict = {}
@@ -121,7 +129,9 @@ def book_appointment():
         appointment_end_time = datetime.timedelta(hours=appointment_end_time.hour, minutes=appointment_end_time.minute)
         
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("INSERT INTO appointments (patient_id, doctor_id, doctor_name, appointment_date, appointment_start_time, appointment_end_time, status) VALUES (%s,%s,%s, %s,%s,%s,%s)", 
                    (patient_id, doctor_id, doctor_name, appointment_date, appointment_start_time, appointment_end_time, status))
         cur.execute("Update doctor_availability SET status = 'Not Available' where doctor_id = %s and date = %s and start_time = %s",(doctor_id, appointment_date, appointment_start_time))
@@ -139,7 +149,9 @@ def track_appointment(user_id):
         #doctor_id = request.args.get('doctor_id')
         print("-->",user_id)
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("Select * from appointments where patient_id = %s",(user_id,))
         rows = cur.fetchall()
         data_dict = {}

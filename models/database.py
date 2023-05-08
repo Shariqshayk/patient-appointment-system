@@ -5,7 +5,11 @@ mysql = MySQL()
 
 def create_tables(app):
     with app.app_context():
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        
+        cur.execute("Create database if not exists medical_management_system")
+        conn.select_db('medical_management_system')
 
         cur.execute('''CREATE TABLE IF NOT EXISTS doctors (
                         doctor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

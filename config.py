@@ -5,7 +5,7 @@ MYSQL_HOST = 'localhost'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = 'Welcome@29'
-MYSQL_DB = 'medical_management_system'
+#MYSQL_DB = 'medical_management_system'
 
 # class Config:
 #     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:Welcome@29:3306/dental_management_system'

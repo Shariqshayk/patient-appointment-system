@@ -30,7 +30,9 @@ def register_api():
         print(hashed_password)
         
         mysql = MySQL()
-        cur = mysql.connection.cursor()
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
         cur.execute("INSERT INTO user_details (age, blood_group, city, contact, email_id, first_name, last_name, password, pincode, role, street, sex) VALUES (%s,%s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s)", 
                     (age, bloodGroup,city,contact, emailId,firstName,lastName,hashed_password, pincode,role,street, sex))
         mysql.connection.commit()
@@ -53,15 +55,20 @@ def login_api():
         hashed_password = hashed_password.hexdigest()
         
         mysql = MySQL()
-        cur = mysql.connection.cursor()
-        cur.execute("Select id, age, blood_group,city,contact,email_id,first_name,last_name,pincode,role,sex,street from user_details where email_id = %s and password = %s", 
+        conn = mysql.connection
+        cur = conn.cursor()
+        conn.select_db('medical_management_system')
+        cur.execute("Select user_id, age, blood_group,city,contact,email_id,first_name,last_name,pincode,role,sex,street from user_details where email_id = %s and password = %s", 
                     (emailId, hashed_password))
         rows = cur.fetchall()
-        keys = ['id', 'age', 'bloodGroup','city','contact','emailId','firstName','lastName','pincode','role','sex','street']
-        data_dict = {}
-        for i, item in enumerate(rows[0]):
-            data_dict[keys[i]] = item
-        print(data_dict)
+        if len(rows) != 0:
+            keys = ['id', 'age', 'bloodGroup','city','contact','emailId','firstName','lastName','pincode','role','sex','street']
+            data_dict = {}
+            for i, item in enumerate(rows[0]):
+                data_dict[keys[i]] = item
+            print(data_dict)
+        else:
+            data_dict = {'Error': 'Email Id not found or password incorrect'}
         mysql.connection.commit()
         cur.close()
 
