@@ -43,12 +43,14 @@ def register_api():
     except Exception as error_str:
         return jsonify({'error': str(error_str)}), 500
     
-@user_bp.route('/login', methods=['GET'])
+@user_bp.route('/login', methods=['POST'])
 def login_api():
     try:
-        emailId = request.args.get('email')
-        password = request.args.get('password')
-        
+        # Get the request data
+        data = request.get_json()
+
+        emailId = data['email']
+        password = data['password']
         salt = 'appointment'
         dataBase_password = password+salt
         hashed_password = hashlib.sha256(dataBase_password.encode('utf-8'))
@@ -62,13 +64,14 @@ def login_api():
                     (emailId, hashed_password))
         rows = cur.fetchall()
         if len(rows) != 0:
-            keys = ['id', 'age', 'bloodGroup','city','contact','emailId','firstName','lastName','pincode','role','sex','street']
+            keys = ['user_id', 'age', 'bloodGroup','city','contact','emailId','firstName','lastName','pincode','role','sex','street']
             data_dict = {}
             for i, item in enumerate(rows[0]):
                 data_dict[keys[i]] = item
+            data_dict['Message'] = 'Login Successful!'
             print(data_dict)
         else:
-            data_dict = {'Error': 'Email Id not found or password incorrect'}
+            data_dict = {'Message': 'Email Id or password incorrect'}
         mysql.connection.commit()
         cur.close()
 
