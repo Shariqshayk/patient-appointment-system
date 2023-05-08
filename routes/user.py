@@ -33,8 +33,14 @@ def register_api():
         conn = mysql.connection
         cur = conn.cursor()
         conn.select_db('medical_management_system')
-        cur.execute("INSERT INTO user_details (age, blood_group, city, contact, email_id, first_name, last_name, password, pincode, role, street, sex) VALUES (%s,%s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s)", 
-                    (age, bloodGroup,city,contact, emailId,firstName,lastName,hashed_password, pincode,role,street, sex))
+        cur.execute("Select email_id from user_details where email_id = %s", 
+            (emailId,))
+        rows = cur.fetchall()
+        if len(rows) == 0:
+            cur.execute("INSERT INTO user_details (age, blood_group, city, contact, email_id, first_name, last_name, password, pincode, role, street, sex) VALUES (%s,%s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s)", 
+                        (age, bloodGroup,city,contact, emailId,firstName,lastName,hashed_password, pincode,role,street, sex))
+        else:
+            return jsonify({'error': 'Email ID already exists'}), 500
         mysql.connection.commit()
         cur.close()
 
