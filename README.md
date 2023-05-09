@@ -32,3 +32,14 @@ IDs already created in database
 Email ID: - sharayu@gmail.com
 
 password: - S@12345
+
+
+# Running Vue Frontend
+
+In the frontend-medimeet folder execute:
+
+npm install
+
+npm run dev
+
+Go to the provided link to see the page.
