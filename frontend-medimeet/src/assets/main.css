@@ -1,0 +1,77 @@
+@import './base.css';
+
+strong{
+  color: rgb(70, 140, 250);
+}
+
+/* Dashboards */
+#container-header{
+  margin-left:auto;
+  margin-right:auto;
+  height: 30vh;
+  background-color: rgb(95, 183, 255);
+}
+
+#logo-dashboard{
+  padding-left: 5cm;
+}
+
+#h-line{
+  bottom: 1cm;
+  width: 130vh;
+  left: 4.2cm;
+  color: white;
+}
+
+#dashboard-header{
+  margin-left:auto;
+  margin-right:auto;
+  color: white;
+  bottom: 1cm;
+  padding-left: 6cm;
+  float: left;
+}
+
+#search-bar{
+  margin-left:auto;
+  margin-right:auto;
+  left: 6.5cm;
+  bottom: 1cm;
+  width: 20%;
+}
+
+#dashboard{
+  border-radius: 6px;
+  bottom: 2cm ;
+  left: 0.5cm;
+  width: 0;
+  min-height: 710px;
+  min-width: 1130px;
+  padding-top: 0;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.44) 0 2px 8px 0;
+}
+
+#dashed-border{
+  top: 0.4cm;
+  border: dashed 4px rgb(225, 225, 225);
+  border-radius: 6px;
+  stroke-dasharray: 10;
+  width: 0;
+  min-height: 680px;
+  min-width: 1100px;
+  padding-top: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-dash{
+  padding-top: 0.7cm;
+  padding-left: 1cm;
+  padding-bottom: 20px;
+  margin: 0 25px;
+  border-bottom: 1px solid #D1D5DB;
+}
