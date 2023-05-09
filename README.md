@@ -18,3 +18,7 @@
 You can configure the Flask app by setting the following environment variables:
 
 1. FLASK_APP: The name of the Flask app (default is app.py).
+
+IDs already created in database
+Email ID: - sharayu@gmail.com
+password: - S@12345
