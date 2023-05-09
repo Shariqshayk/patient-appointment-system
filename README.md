@@ -19,6 +19,12 @@ You can configure the Flask app by setting the following environment variables:
 
 1. FLASK_APP: The name of the Flask app (default is app.py).
 
+
+# In order to start the program, the following commands must be run:
+
+docker-compose up -d
+
+
 IDs already created in database
 
 Email ID: - sharayu@gmail.com
